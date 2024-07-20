@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const taskInput = document.getElementById("task-input");
   const taskList = document.getElementById("task-list");
   function addTask() {
-    const taskText = taskInput.value.trim();
+    const taskText = taskInput.value();
     if (taskText === "") {
       alert("Please enter a Task");
     } else {
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       taskLi.textContent = taskText;
       const remove = document.createElement("button");
       remove.textContent = "Remove";
-      remove.classList = "remove-btn";
+      remove.classList.add("remove-btn");
       remove.onclick = function () {
         taskLi.remove();
       };
